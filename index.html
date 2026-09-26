@@ -31,6 +31,11 @@
 
   <title>dendro_hunter</title>
   <link rel="manifest" href="manifest.json">
+
+  <!-- 相機掃描（mobile_scanner web）需要 ZXing 全域函式庫。
+       未載入時會出現 "TypeError: Cannot read properties of undefined (reading 'BrowserMultiFormatReader')"。
+       這裡使用本地打包的 zxing.js（@zxing/library UMD build），不依賴執行期 CDN。 -->
+  <script src="zxing.js"></script>
 </head>
 <body>
   <!--
